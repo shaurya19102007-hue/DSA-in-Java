@@ -1,5 +1,8 @@
 class Solution {
     public String largestNumber(int[] nums) {
+        if(nums.length==1)
+        return Integer.toString(nums[0]);
+
         String[] arr = new String[nums.length];
         for(int i = 0; i<nums.length;i++)
         {
@@ -8,7 +11,7 @@ class Solution {
 
         Arrays.sort(arr,(a,b)->(b+a).compareTo(a+b));
 
-        if(arr[0].equals("0"))
+        if(arr[0].charAt(0)=='0')
         return "0";
 
         StringBuilder sb = new StringBuilder();
